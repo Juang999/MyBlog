@@ -1,9 +1,25 @@
-.img {
-    margin-top: -68px;
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/black-concrete-wall.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1700px;
 }
 
-.tulisan {
-    z-index: 1;
-    margin-top: -300px;
-    font-size: 23px;
+.myPhoto {
+    transform: scaleX(-1);
+}
+
+.profession {
+    font-family: "Montserrat";
+}
+
+.half-background {
+    background-color: rgba(32,32,32,1);
+    height: 500px;
+}
+
+.brand {
+    font-family: "poppins";
 }

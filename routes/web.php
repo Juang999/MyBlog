@@ -15,3 +15,8 @@ use App\Http\Controllers as Controller;
 */
 
 Route::get('/', Controller\Root::class);
+Route::get('/about', Controller\AboutMe::class);
+Route::resources([
+    'portofolio' => Controller\PortofolioController::class
+]);
+
