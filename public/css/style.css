@@ -7,14 +7,6 @@ body {
     height: 1700px;
 }
 
-.myPhoto {
-    transform: scaleX(-1);
-}
-
-.profession {
-    font-family: "Montserrat";
-}
-
 .half-background {
     background-color: rgba(32,32,32,1);
     height: 500px;
