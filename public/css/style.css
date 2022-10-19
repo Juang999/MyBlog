@@ -1,10 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('/img/black-concrete-wall.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1700px;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    height: 100vh;
 }
 
 .half-background {

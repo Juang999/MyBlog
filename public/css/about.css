@@ -1,17 +1,3 @@
-.description {
-    display: flex;
-    background-color: red;
-    justify-content: center;
-    width: 100%;
-}
-
-.my-photo {
-    background-color: black;
-    transform: scaleX(-1);
-    width: 31%;
-    height: auto;
-}
-
 .about-me {
     width: 69%;
     height: auto;
@@ -20,9 +6,14 @@
     align-items: center;
 }
 
-@media (min-width: 398px) {
-    .modal {
-        display: flex;
-        align-items: center;
+@media (min-width: 360px) {
+    .w {
+        width: 75% !important;
+    }
+}
+
+@media (min-width: 991px) {
+    .w {
+        width: 25% !important;
     }
 }
