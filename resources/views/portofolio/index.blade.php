@@ -1,3 +1,3 @@
 @extends('layouts.app')
 
-@section('title', 'Bangkit Juang Raharjo | Portofolio')
+@section('title', 'My Portofolio | Bangkit Juang Raharjo')
