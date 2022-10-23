@@ -1,7 +1,5 @@
 @media (min-width: 360px) {
     .main {
-        flex-direction: column !important;
-        justify-content: center !important;
         height: 500px;
         margin-bottom: 1rem;
         margin-top: 1rem;
@@ -10,8 +8,6 @@
     .frame-photo {
         width: 100% !important;
         height: 60% !important;
-        display: flex;
-        justify-content: center !important;
     }
 
     .welcome {
@@ -20,10 +16,8 @@
     }
 
     .description {
-        justify-content: center !important;
         padding-top: 1.5rem !important;
         padding-bottom: 1.5rem !important;
-        height: 600px;
     }
 
     .model {
@@ -34,26 +28,18 @@
     }
 
     .cover {
-        display: flex;
-        justify-content: center;
+        /*  */
     }
 
     .about-me {
         width: 150px;
         height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
-    .myDescription {
-        text-align: justify !important;
+    .my-description {
     }
 
     .buttons {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
         margin-top: 3rem !important;
     }
 
@@ -66,15 +52,10 @@
     }
 
     .services {
-        flex-direction: column !important;
-        justify-content: center !important;
         height: 650px;
     }
 
     .cards {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
         margin-top: 1.5rem !important;
     }
 
