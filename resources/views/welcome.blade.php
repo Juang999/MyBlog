@@ -9,7 +9,7 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Montserrat:wght@300&family=Poppins&display=swap"
     rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/style.css">
 @endsection
 
 @section('content')
@@ -17,7 +17,7 @@
     <div class="frame-photo d-flex justify-content-center">
         <img src="/img/20221021_200621.png" class="photo">
     </div>
-    <div class="d-sm-flex justify-content-sm-center align-items-lg-center">
+    <div class="d-sm-flex justify-content-sm-center align-items-lg-center welcome">
         <div class="text-center text-lg-end">
             <h1 class="text-white" style="font-family: 'Manrope';">I'm Juang</h1>
             <h5 class="text-secondary" style="font-family: 'Montserrat';">Web Developer & Backend Developer</h5>
@@ -35,6 +35,8 @@
         </div>
         <div class="wrap">
             <div class="text-center text-lg-start my-description">
+                <h4 class="text-white">Bangkit Juang Raharjo</h4>
+                <br>
                 <p class="text-white">I am a web developer who focuses on building systems (Backend Developer). I used
                     to
                     use laravel to create systems and can also make systems with expressjs and golang with further
@@ -48,7 +50,7 @@
                 <div class="dropdown">
                     <button class="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        My CV
+                        Download CV
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">CV Creative</a></li>

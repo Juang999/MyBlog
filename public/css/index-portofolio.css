@@ -1,0 +1,34 @@
+@media (min-width: 360px) {
+    .picture-portofolio {
+        height: 190px;
+    }
+
+    .portofolio {
+        margin-top: 1rem !important;
+        padding: 2rem 2rem 2rem 2rem;
+    }
+
+    .card {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .underscore {
+        width: 155px;
+    }
+}
+
+@media (min-width: 992px) {
+    .picture-portofolio {
+        height: 500px;
+    }
+
+    .card-portofolio {
+        flex-direction: initial !important;
+        align-items: initial !important;
+    }
+
+    .underscore {
+        width: 225px;
+    }
+}

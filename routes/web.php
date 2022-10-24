@@ -20,3 +20,9 @@ Route::resources([
     'portofolio' => Controller\PortofolioController::class
 ]);
 
+Route::get('login', [Controller\Auth\AuthController::class, 'loginPage']);
+Route::post('login', [Controller\Auth\AuthController::class, 'login']);
+
+Route::group(['prefix' => 'admin-panel', 'middleware' => 'auth'], function () {
+    // Route::get('dahsboard', [Controller\Dashboard])
+});
