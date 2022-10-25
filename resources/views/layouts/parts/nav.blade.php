@@ -14,12 +14,12 @@
                     <li class="nav-item me-5">
                         <a class="nav-link {{ ($active == 'portofolio') ? 'active' : '' }}" href="/portofolio">Portofolio</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{Auth::user() ? 'me-5' : ''}}">
                         <a class="nav-link {{ ($active == 'blog') ? 'active' : '' }}" href="/about">Blog</a>
                     </li>
                     @if (Auth::user())
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">Back To Dashboard</a>
+                        <a class="nav-link" href="/admin-panel/dashboard">Back To Dashboard</a>
                     </li>
                     @endif
                 </ul>

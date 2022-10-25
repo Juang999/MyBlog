@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('portofolios', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description');
+            $table->string('build_with')->nullable();
+            $table->text('description')->nullable();
             $table->string('demo_url');
             $table->string('project_url');
+            $table->boolean('is_active');
             $table->timestamps();
         });
     }

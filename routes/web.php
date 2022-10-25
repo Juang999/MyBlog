@@ -17,12 +17,18 @@ use App\Http\Controllers as Controller;
 Route::get('/', Controller\Root::class);
 Route::get('/about', Controller\AboutMe::class);
 Route::resources([
-    'portofolio' => Controller\PortofolioController::class
+    'portofolio' => Controller\Client\PortofolioController::class
 ]);
 
 Route::get('login', [Controller\Auth\AuthController::class, 'loginPage']);
 Route::post('login', [Controller\Auth\AuthController::class, 'login']);
 
 Route::group(['prefix' => 'admin-panel', 'middleware' => 'auth'], function () {
-    // Route::get('dahsboard', [Controller\Dashboard])
+    Route::get('dashboard', Controller\Dashboard::class);
+
+    // routeResources
+    Route::get('portofolio', [Controller\Admin\PortofolioController::class, 'index']);
+
+    // logout
+    Route::post('logout', [Controller\Auth\AuthController::class, 'logout'])->name('logout');
 });

@@ -50,7 +50,7 @@
                         of the
                         card's
                         content.</p>
-                    <a href="#" class="btn btn-outline-danger">See more...</a>
+                    <a href="#" class="badge text-bg-danger">See more...</a>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
                         of the
                         card's
                         content.</p>
-                    <a href="#" class="btn btn-outline-danger">See more...</a>
+                    <a href="#" class="badge text-bg-danger">See more...</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                         of the
                         card's
                         content.</p>
-                    <a href="#" class="btn btn-outline-danger">See more...</a>
+                    <a href="#" class="badge text-bg-danger">See more...</a>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                         of the
                         card's
                         content.</p>
-                    <a href="#" class="btn btn-outline-danger">See more...</a>
+                    <a href="#" class="badge text-bg-danger">See more...</a>
                 </div>
             </div>
         </div>
