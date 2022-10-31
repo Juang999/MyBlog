@@ -62,7 +62,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../layout/top-nav.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="fa-sharp fa-solid fa-user nav-icon"></i>
                                 <p>Profile</p>
                             </a>

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
+    <!-- CSS yield -->
+    @yield('css')
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -32,6 +34,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
+                    @yield('alert')
                     <div class="row mb-2">
                         <div class="col-sm-6 d-flex justify-content-start">
                             <h1>@yield('feature')</h1>
@@ -55,7 +58,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 3.2.0
             </div>
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+            <strong>Copyright &copy; 2020-2021 <a href="https://github.com/Juang999">Juang</a>.</strong> All rights
             reserved.
         </footer>
 
@@ -75,6 +78,8 @@
     <script src="/adminlte/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/adminlte/dist/js/demo.js"></script>
+    <!-- yield js -->
+    @yield('js')
 </body>
 
 </html>

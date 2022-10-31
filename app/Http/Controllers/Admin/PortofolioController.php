@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PortofolioRequest;
 use App\Models\Portofolio;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class PortofolioController extends Controller
                 'portofolio' => $portofolio
             ]);
         } catch (\Throwable $th) {
-            // 
+            //
         }
     }
 
@@ -42,9 +43,24 @@ class PortofolioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PortofolioRequest $request)
     {
-        //
+        // dd($request->all());
+
+        try {
+            Portofolio::create([
+                'title' => $request->title,
+                'build_with' => $request->buildWith,
+                'description' => $request->description,
+                'demo_url' => ($request->demoUrl) ? $request->demoUrl : '#',
+                'project_url' => ($request->projectUrl) ? $request->projectUrl : '#',
+                'is_active' => 1
+            ]);
+
+            return redirect('/admin-panel/portofolio')->with('success', 'berhasil membuat portofolio');
+        } catch (\Throwable $th) {
+            return redirect('/admin-panel/portofolio')->with('failed', $th->getMessage());
+        }
     }
 
     /**
@@ -55,7 +71,11 @@ class PortofolioController extends Controller
      */
     public function show(Portofolio $portofolio)
     {
-        //
+        try {
+            return response()->json($portofolio, 200);
+        } catch (\Throwable $th) {
+            return redirect('/admin-panel/portofolio')->with('failed', $th->getMessage());
+        }
     }
 
     /**
@@ -89,6 +109,13 @@ class PortofolioController extends Controller
      */
     public function destroy(Portofolio $portofolio)
     {
-        //
+        try {
+            $portofolio->delete();
+
+            return redirect('/admin-panel/portofolio')->with('success', 'berhasil menghapus data');
+        } catch (\Throwable $th) {
+            return redirect('/admin-panel/portofolio')->with('failed', $th->getMessage());
+
+        }
     }
 }

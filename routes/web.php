@@ -20,14 +20,19 @@ Route::resources([
     'portofolio' => Controller\Client\PortofolioController::class
 ]);
 
-Route::get('login', [Controller\Auth\AuthController::class, 'loginPage']);
+Route::get('login', [Controller\Auth\AuthController::class, 'loginPage'])->name('login');
 Route::post('login', [Controller\Auth\AuthController::class, 'login']);
 
 Route::group(['prefix' => 'admin-panel', 'middleware' => 'auth'], function () {
     Route::get('dashboard', Controller\Dashboard::class);
 
     // routeResources
-    Route::get('portofolio', [Controller\Admin\PortofolioController::class, 'index']);
+    Route::resource('portofolio', Controller\Admin\PortofolioController::class)
+    ->except(['create', 'edit']);
+
+    // Route::delete('delete-data', function () {
+    //     dd('hello world');
+    // });
 
     // logout
     Route::post('logout', [Controller\Auth\AuthController::class, 'logout'])->name('logout');
