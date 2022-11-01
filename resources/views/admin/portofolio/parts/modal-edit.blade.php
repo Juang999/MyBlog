@@ -11,7 +11,6 @@
             </div>
             <div class="modal-body">
                 <form id="form-edit" action="" method="post">
-                    @csrf
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="inputTitle" class="text-dark">Title</label>
@@ -65,6 +64,8 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Post Portofolio</button>
                     </div>
+                    @method('put')
+                    @csrf
                 </form>
             </div>
         </div>

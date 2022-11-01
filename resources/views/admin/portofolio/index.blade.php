@@ -28,38 +28,19 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    {{-- <h3 class="card-title">All Portofolio</h3> --}}
-
-                    <div class="card-tools d-flex flex-row align-items-center justify-content-between bg-primary">
-                        @include('admin.portofolio.parts.modal-create')
-                    </div>
+                    <h3 class="card-title">Carousel</h3>
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($portofolio as $data)
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>{{$data->title}}</td>
-                                <td><i class="{{($data->is_active == 1) ? 'fa-solid fa-check' : 'fa-regular fa-xmark'}}"></i></td>
-                                <td>
-                                    @include('admin.portofolio.parts.modal-detail')
-                                    @include('admin.portofolio.parts.modal-edit')
-                                    @include('admin.portofolio.parts.modal-delete')
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                <div class="card-body carousel-image">
+                    @if ($carousel->count() == 0)
+                    <div class="border border-dark rounded d-flex justify-content-center align-items-center" style="width: 250px; height:150px; border-width: 5px;">
+                        <p style="font-size: 70px;" class="text-dark">+</p>
+                    </div>
+                    @else
+                        @foreach ($carousel as $item)
+                            <img src="{{$item->image_path}}" alt="" style="width: 250px; height:150px;">
+                        @endforeach
+                    @endif
                 </div>
                 <!-- /.card-body -->
             </div>
@@ -70,8 +51,6 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    {{-- <h3 class="card-title">All Portofolio</h3> --}}
-
                     <div class="card-tools d-flex flex-row align-items-center justify-content-between bg-primary">
                         @include('admin.portofolio.parts.modal-create')
                     </div>
@@ -135,7 +114,8 @@
             // console.log('hello world')
 
             $.get("/admin-panel/portofolio/"+ $(this).data('id'), (data) => {
-                    $('#form-edit').attr('action', '/admin-panel/portofolio'+$(this).data('id'));
+                    $('#form-edit').attr('action', '/admin-panel/portofolio/'+$(this).data('id'));
+                    console.log($('#form-edit').attr('action'))
                     $('#editTitle').attr('value', data.title)
                     $('#editBuildWith').attr('value', data.build_with)
                     $('#editDemoUrl').attr('value', data.demo_url)

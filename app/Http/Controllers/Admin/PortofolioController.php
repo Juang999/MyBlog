@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PortofolioRequest;
-use App\Models\Portofolio;
+use App\Models\{Portofolio, Carousel};
 use Illuminate\Http\Request;
 
 class PortofolioController extends Controller
@@ -18,12 +18,11 @@ class PortofolioController extends Controller
     {
         try {
             $portofolio = Portofolio::get();
+            $carousel = Carousel::get();
 
-            return view('admin.portofolio.index', [
-                'portofolio' => $portofolio
-            ]);
+            return view('admin.portofolio.index', compact('portofolio', 'carousel'));
         } catch (\Throwable $th) {
-            //
+            return redirect('/admin-panel/dashboard')->with('failed', 'gagal masuk ke dalam fitur portofolio');
         }
     }
 
@@ -96,9 +95,21 @@ class PortofolioController extends Controller
      * @param  \App\Models\Portofolio  $portofolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portofolio $portofolio)
+    public function update(PortofolioRequest $request, Portofolio $portofolio)
     {
-        //
+        try {
+            $portofolio->update([
+                'title' => $request->title,
+                'build_with' => $request->buildWith,
+                'description' => $request->description,
+                'demo_url' => $request->demoUrl,
+                'project_url' => $request->projectUrl,
+            ]);
+
+            return redirect('/admin-panel/portofolio')->with('success', 'berhasil mengubah data');
+        } catch (\Throwable $th) {
+            return redirect('/admin-panel/porfolio')->with('failed', $th->getMessage());
+        }
     }
 
     /**

@@ -67,6 +67,12 @@
                                 <p>Profile</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <i class="fa-solid fa-house"></i>
+                                <p>Homepage</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
